@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour {
 				GameObject gameObject = objectTransform.gameObject;
 				Debug.Log(gameObject.GetComponent<BoxCollider2D>().bounds);
 				if (gameObject.GetComponent<BoxCollider2D>().bounds.Contains((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition))) {
-					selectedTile = gameObject;
+                    Debug.Log("test2");
+                    selectedTile = gameObject;
 				}
 			}
 		}
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour {
 		if(selectedTile != null) {
 			GameObject selection = GameObject.FindWithTag("Selection");
 			selection.SetActive(true);
-			selection.transform.position = Camera.main.WorldToScreenPoint(selectedTile.transform.position);
+			selection.transform.position = selectedTile.transform.position;
 		}
 	}
 }
