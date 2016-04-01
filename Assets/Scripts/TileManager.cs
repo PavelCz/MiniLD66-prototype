@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class TileManager : MonoBehaviour {
 	private GameObject selectedTile;
 
 	// Use this for initialization
