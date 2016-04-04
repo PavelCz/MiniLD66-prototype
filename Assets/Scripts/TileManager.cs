@@ -5,6 +5,7 @@ using System.Collections;
 public class TileManager : MonoBehaviour {
 	public GameObject selectedTile;
 	public Button removeRockButton;
+	public GameObject selection;
 
 	// Use this for initialization
 	void Start() {
@@ -30,8 +31,6 @@ public class TileManager : MonoBehaviour {
 
 		if(selectedTile != null) {
 			removeRockButton.interactable = true;
-
-			GameObject selection = GameObject.FindWithTag("Selection");
 			selection.SetActive(true);
 			selection.transform.position = selectedTile.transform.position;
 		}
