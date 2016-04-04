@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class TileManager : MonoBehaviour {
-	private GameObject selectedTile;
+	public GameObject selectedTile;
 	public Button removeRockButton;
 
 	// Use this for initialization
@@ -35,5 +35,10 @@ public class TileManager : MonoBehaviour {
 			selection.SetActive(true);
 			selection.transform.position = selectedTile.transform.position;
 		}
+	}
+
+	public void RemoveRockAction()
+	{
+		Debug.Log("Remove ze rock");
 	}
 }
