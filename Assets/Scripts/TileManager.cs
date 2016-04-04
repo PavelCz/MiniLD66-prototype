@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class TileManager : MonoBehaviour {
 	private GameObject selectedTile;
+	public Button removeRockButton;
 
 	// Use this for initialization
 	void Start() {
@@ -11,6 +13,8 @@ public class TileManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
+
+
 		if (Input.GetMouseButtonDown(0)) {
 			Debug.Log("test");
 			Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
@@ -25,6 +29,8 @@ public class TileManager : MonoBehaviour {
 		}
 
 		if(selectedTile != null) {
+			removeRockButton.interactable = true;
+
 			GameObject selection = GameObject.FindWithTag("Selection");
 			selection.SetActive(true);
 			selection.transform.position = selectedTile.transform.position;
